@@ -1,0 +1,20 @@
+seeds:
+  - name: country
+    config:
+      delimiter: "|"
+      column_types:
+        code: varchar
+
+  - name: column_space
+    config:
+      quote_columns: true
+      delimiter: "|"
+      column_types:
+        country_code: varchar
+
+  - name: dollar_delimeter
+    config:
+      delimiter: "|"
+      column_types:
+        code: varchar
+        

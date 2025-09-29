@@ -1,0 +1,34 @@
+sources:
+  - name: bronze_layer
+    database: SALES_DB
+    schema: RAW
+    tables:
+      - name: CUSTOMERS
+      - name: PRODUCTS
+      - name: SALES
+
+  - name: s1_layer
+    database: SALES_DB
+    schema: BRONZE
+    tables:
+      - name: COUNTRY
+
+  - name: raw_layer
+    database: ECOMM_DB
+    schema: RAW_ECOMM
+    tables:
+      - name: CUSTOMERS
+      - name: PRODUCTS
+      - name: PROMOTIONS
+      - name: ORDERS
+      - name: ORDER_ITEMS
+      - name: SHIPMENTS
+      - name: RETURNS
+      - name: PAYMENTS
+
+  - name: practice_dbt
+    database: raw_db_sf
+    schema: raw_sc_sf
+    tables:
+      - name: customers
+      - name: orders 
