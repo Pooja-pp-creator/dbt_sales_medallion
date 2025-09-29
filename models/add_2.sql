@@ -1,0 +1,1 @@
+select {{add_2_num(10,20)}}  add_2_num

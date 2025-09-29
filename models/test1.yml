@@ -1,0 +1,36 @@
+models:
+  - name: bronze_customers
+    description: "Cleaned customer data from RAW.CUSTOMERS"
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: bronze_products
+    description: "Cleaned product data from RAW.PRODUCTS"
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  - name: bronze_sales
+    description: "Cleaned sales data from RAW.SALES"
+    columns:
+      - name: sale_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('bronze_customers')
+              field: customer_id
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('bronze_products')
+              field: product_id
